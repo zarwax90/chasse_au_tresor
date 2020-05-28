@@ -1,5 +1,5 @@
 body {
-    background-image: url("carte.jpg");
+    background-image: url("images/carte.jpg");
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ table {
 
 table.carte {
     margin: auto;
-    background-image: url("map.jpg");
+    background-image: url("images/map.jpg");
     background-size: cover;
     box-shadow: 1px 1px 1px 1px black;
 }
@@ -51,7 +51,7 @@ table.legende td {
 }
 
 .bon {
-    background-image: url("coffre.png");
+    background-image: url("images/coffre.png");
     background-size: cover;
     pointer-events: none;
 }
@@ -67,7 +67,7 @@ table.legende td {
 }
 
 .bateau {
-    background-image: url("bateau.jpg");
+    background-image: url("images/bateau.jpg");
     background-size: cover;
     pointer-events: none;
 }
