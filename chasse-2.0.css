@@ -1,0 +1,73 @@
+body {
+    background-image: url("carte.jpg");
+    background-size: cover;
+}
+
+.entete {
+    width: 200px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.fin {
+    width: 500px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+table.carte td {
+    padding: 40px;
+    border: 1px solid black;
+}
+
+table {
+    border-spacing: 0;
+}
+
+table.carte {
+    margin: auto;
+    background-image: url("map.jpg");
+    background-size: cover;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+td:hover {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: crosshair;
+}
+
+table.legende td {
+    border: 1px solid black;
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+}
+
+.info {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.mauvais {
+    background: rgba(255, 45, 0, 0.8);
+    pointer-events: none;
+}
+
+.bon {
+    background-image: url("coffre.png");
+    background-size: cover;
+    pointer-events: none;
+}
+
+.colonne {
+    background: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+.ligne {
+    background: rgba(255, 255, 90, 0.8);
+    pointer-events: none;
+}
+
+.bateau {
+    background-image: url("bateau.jpg");
+    background-size: cover;
+    pointer-events: none;
+}
