@@ -71,3 +71,7 @@ table.legende td {
     background-size: cover;
     pointer-events: none;
 }
+
+.cartewin {
+    pointer-events: none;
+}

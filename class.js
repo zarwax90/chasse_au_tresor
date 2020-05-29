@@ -1,10 +1,17 @@
 class Object {
-    constructor( /*nom, action,*/ x, y) {
-        //this.nom = nom;
-        //this.action = action;
-        this.x = x;
-        this.y = y;
+    constructor(nom, action, mb, xy) {
+        this.nom = nom;
+        this.action = action;
+        this.mb = mb
+        this.xy = xy;
+    }
+    getxy() {
+        return this.xy;
     }
 }
 
-let bateau = new Object(Math.floor(Math.random() * 8), Math.floor(Math.random() * 8))
+let boat = new Object("bateau", "5 coups restants", "malus", objets[0]);
+console.log(boat);
+let tresors = new Object("tresor", "win the game", "bonus", objets[1]);
+console.log(tresors)
+console.log(tresors.getxy())

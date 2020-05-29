@@ -3,17 +3,15 @@
 	Description		:
 */
 
-//Initialise la variable coups
+//Initialise les variables des coups
 let coups = 0;
 let coupsMalus = 5
 
-//Position des objets
+//Récupère la position des objets
 objets = genObjets();
-let tresor = objets[0]
-let bateau = objets[1]
 
 //Variable du malus, mets une limite de coups si = à 1
-let malus = 0
+let malus = false
 
 //Génére une position aléatoire pour chaque objet 
 function genObjets() {
@@ -35,38 +33,38 @@ function genObjets() {
 function clickCase(idCase) {
 
     //ajoute 1 au nombre de coups
-    if (malus == 0) {
+    if (malus == false) {
         coups = coups + 1;
     } else {
         coups = coups + 1;
         coupsMalus = coupsMalus - 1;
     }
-
+    //Vérifie s'il reste dees coups sur le malus 
     if (coupsMalus < 0) {
         alert("Comment veux-tu avancer alors que l'on a coulé ?!");
     } else {
         //Trésor découvert
         //change le nom de la class de la case, affiche un message et affiche le trésor
-        if (tresor == idCase) {
+        if (tresors.getxy() == idCase) {
             document.getElementById(idCase).className = "bon";
-            if (malus == 0) {
+            if (malus == false) {
                 alert("Soit c'est du génie, soit c'est de la folie ! Tu as trouvé ton trésor en " + coups + " coup(s) l'ami !");
             } else {
                 //coupsMalus = coupsMalus + 1
                 alert("Ouf on a eu chaud l'ami, notre bateau aurait tenu " + coupsMalus + " coup(s) de plus ! Félicitations tu as trouvé le trésor en " + coups + " coup(s) !");
             }
             //change le nom de la class de la case et affiche le bateau
-        } else if (bateau == idCase) {
+        } else if (boat.getxy() == idCase) {
             document.getElementById(idCase).className = "bateau";
-            malus = 1
+            malus = true
             alert("Aïe on a été attaqué !! Notre bateau ne tiendra pas plus de 5 essaie alors dêpechons nous !");
 
             //Sur la bonne ligne, change le nom de la class de la case
-        } else if (tresor[2] == idCase[2]) {
+        } else if (tresors.getxy()[2] == idCase[2]) {
             document.getElementById(idCase).className = "ligne";
 
             //Sur la bonne colonne, change le nom de la class de la case
-        } else if (tresor[0] == idCase[0]) {
+        } else if (tresors.getxy()[0] == idCase[0]) {
             document.getElementById(idCase).className = "colonne";
 
 
@@ -76,7 +74,7 @@ function clickCase(idCase) {
         }
     }
 
-    //Affiche le nombre de coups
+    //Affiche le nombre de coups en fonction de l'état du malus 
     if (malus == 0) {
         compte.innerHTML = " : " + coups;
     } else {
